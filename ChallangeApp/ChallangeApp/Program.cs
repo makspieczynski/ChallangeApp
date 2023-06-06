@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.Design;
 
-int number = 4594;
+int number = 45947512;
 string numberAsString = number.ToString();
 char[] letters = numberAsString.ToCharArray();
 
