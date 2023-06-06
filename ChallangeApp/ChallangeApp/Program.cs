@@ -3,16 +3,16 @@
 var name = ("Ewa");
 bool woman = true;
 var age = 33;
-if (age < 30 && woman && age >= 18)
+if (age < 30 && woman)
 {
     Console.WriteLine("kobieta poniżej 30 lat");
 }
-else if (age == 35 && woman && name == "Ewa")
+else if (age == 33 && woman && name == "Ewa")
 {
-    Console.WriteLine(name + ", lat" + age);
+    Console.WriteLine("Ewa lat 33");
 }
-if (age < 18 && woman == false)
+else if (age < 18 && woman == false)
 {
-        Console.WriteLine("niepełnoletni mężczyzna");
+    Console.WriteLine("niepełnoletni mężczyzna");
 }
 
