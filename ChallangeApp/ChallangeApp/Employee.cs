@@ -4,6 +4,10 @@
     {
         private List<int> grade = new List<int>();
 
+        public Employee(string name)
+        {
+            this.Name = name;
+        }
 
         public Employee(string name, string surname, string age)
         {

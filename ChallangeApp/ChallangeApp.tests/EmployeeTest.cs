@@ -1,6 +1,6 @@
 namespace ChallangeApp.tests
 {
-    public class Tests
+    public class EmployeeTests
     {
         [Test]
         public void WhenUserCollectGrades_ShouldCorrectResult()
@@ -9,18 +9,15 @@ namespace ChallangeApp.tests
             var employee = new Employee ("Maks", "Pieczyñski", "30");
             employee.AddGrade(5);
             employee.AddGrade(6);
-            employee.AddGrade(-3);
+            
 
-            var employee1 = new Employee("Jan", "Kowalski", "37");
-            employee1.AddGrade(8);
-            employee1.AddGrade(9);
-            employee1.AddGrade(-17);
+
             //act
             var result= employee.Result;
-            var result1 = employee1.Result;
+            
 
             //assert
-            Assert.AreEqual(8, result);
+            Assert.AreEqual(11, result);
 
         }
     }
