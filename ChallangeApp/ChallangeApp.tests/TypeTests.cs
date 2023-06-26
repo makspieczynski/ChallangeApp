@@ -34,17 +34,17 @@ namespace ChallangeApp.tests
         public void EmployeeShouldReturnDifferentObjects()
         {
             //arange
-            var employee1 = GetEmployee("Maks");
-            var employee2 = GetEmployee("Maks");
+            var employee1 = GetEmployee("Maks", "Pieczyński");
+            var employee2 = GetEmployee("Maks", "Pieczyński");
 
             //act
 
             //assert
             Assert.AreNotEqual(employee1, employee2);
         }
-        private Employee GetEmployee(string name)
+        private Employee GetEmployee(string name, string surname)
         {
-            return new Employee(name);
+            return new Employee(name, surname);
         }
     }
 }
