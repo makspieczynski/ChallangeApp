@@ -8,8 +8,8 @@ namespace ChallangeApp.tests
             //arange
             var employee = new Employee ("Maks", "Pieczyñski");
             employee.AddGrade(2);
-            employee.AddGrade(5);
-            employee.AddGrade(9);
+            employee.AddGrade(2);
+            employee.AddGrade(6);
 
 
 
@@ -20,7 +20,7 @@ namespace ChallangeApp.tests
 
 
             //assert
-            Assert.AreEqual(9.0f, statistics.Max);
+            Assert.AreEqual(6, statistics.Max);
 
         }
         [Test]
@@ -30,13 +30,13 @@ namespace ChallangeApp.tests
             //arange
             var employee = new Employee("Maks", "Pieczyñski");
             employee.AddGrade(2);
-            employee.AddGrade(5);
-            employee.AddGrade(9);
+            employee.AddGrade(2);
+            employee.AddGrade(6);
             //act
             var statistics = employee.GetStatistics();
 
             //assert
-            Assert.AreEqual(9, statistics.Max);
+            Assert.AreEqual(2, statistics.Min);
 
         }
         [Test]
@@ -46,13 +46,13 @@ namespace ChallangeApp.tests
             //arange
             var employee = new Employee("Maks", "Pieczyñski");
             employee.AddGrade(2);
-            employee.AddGrade(5);
-            employee.AddGrade(9);
+            employee.AddGrade(2);
+            employee.AddGrade(6);
             //act
             var statistics = employee.GetStatistics();
 
             //assert
-            Assert.AreEqual(5.33333349f, statistics.Average) ;
+            Assert.AreEqual(Math.Round(3.33, 2), Math.Round(statistics.Average, 2));
 
         }
     }

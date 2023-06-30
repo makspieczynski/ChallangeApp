@@ -1,4 +1,6 @@
-﻿namespace ChallangeApp
+﻿using System.Reflection.Metadata.Ecma335;
+
+namespace ChallangeApp
 {
     public class Employee
     {
@@ -18,8 +20,44 @@
 
         public void AddGrade(float grade)
         {
-            this.grades.Add(grade);
+            
+
+            if(grade >= 0 && grade <= 100)
+            {
+                this.grades.Add(grade);
+            }
+            else
+            {
+                Console.WriteLine("invalid grade value");
+            }
         }
+
+
+        public void AddGrade(double grade)
+        {
+            float doubleToFloat = (float)grade;
+            this.AddGrade(doubleToFloat);
+        }
+
+        public void AddGrade (long grade)
+        {
+            float longToFloat = (float)grade;
+            this.AddGrade(longToFloat);
+        }
+        public void AddGrade(string grade)
+
+        { 
+            if(float.TryParse(grade, out float result))
+            {
+                this.AddGrade(result);
+            }
+            else
+            {
+                Console.WriteLine("string is not float");
+            }
+            
+        }
+        
         public Statistics GetStatistics ()
         {
             var statistics = new Statistics();
