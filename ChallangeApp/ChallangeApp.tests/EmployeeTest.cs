@@ -6,7 +6,7 @@ namespace ChallangeApp.tests
         public void WhenGetStatistics_ShouldReturnCorrectMax()
         {
             //arange
-            var employee = new Employee ("Maks", "Pieczyñski");
+            var employee = new Employee("Maks", "Pieczyñski");
             employee.AddGrade(2);
             employee.AddGrade(2);
             employee.AddGrade(6);
@@ -16,7 +16,7 @@ namespace ChallangeApp.tests
             //act
             var statistics = employee.GetStatistics();
 
-            
+
 
 
             //assert
