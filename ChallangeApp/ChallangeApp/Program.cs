@@ -1,13 +1,26 @@
 ﻿using ChallangeApp;
 
-Employee employee = new Employee("Maks", "Pieczynski");
-employee.AddGrade(9f);
-employee.AddGrade("4000");
-employee.AddGrade(2);
-employee.AddGrade(6);
+Console.WriteLine("Witamy w programie XYZ do oceny pracowników");
+Console.WriteLine("===========================================");
+Console.WriteLine();
 
+var employee = new Employee();
 
+while(true)
+{
+    Console.WriteLine("Podaj kolejną ocenę pracownika");
+    var input = Console.ReadLine();
+    if(input == "q")
+    {
+        break;
+    }
+    employee.AddGrade(input);
+}
 
+var statistics = employee.GetStatistics();
+Console.WriteLine($"Average: {statistics.Average}");
+Console.WriteLine($"Min: {statistics.Min}");
+Console.WriteLine($"Max: {statistics.Max}");
 
 
 

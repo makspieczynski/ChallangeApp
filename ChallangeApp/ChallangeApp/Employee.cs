@@ -13,6 +13,10 @@ namespace ChallangeApp
             this.Surname = surname;
         }
 
+        public Employee()
+        {
+        }
+
         public string Name { get; private set; }
         public string Surname { get; private set; }
 
@@ -31,6 +35,7 @@ namespace ChallangeApp
             {
                 Console.WriteLine("invalid grade value");
             }
+            
         }
 
 
@@ -44,6 +49,34 @@ namespace ChallangeApp
         {
             float longToFloat = (float)grade;
             this.AddGrade(longToFloat);
+        }
+
+        public void AddGrade(char grade)
+        {
+
+            switch (grade)
+            {
+                case 'A':
+                case 'a':
+                    this.grades.Add(100);
+                    break;
+                case 'B':
+                case 'b':
+                    this.grades.Add(80);
+                    break;
+                case 'C':
+                case 'c':
+                    this.grades.Add(60);
+                    break;
+                case 'D':
+                case 'd':
+                    this.grades.Add(40);
+                    break;
+                default:
+                    Console.WriteLine("Wrong Letter");
+                    break;
+            }
+
         }
         public void AddGrade(string grade)
 
@@ -82,7 +115,27 @@ namespace ChallangeApp
 
             statistics.Average = statistics.Average / this.grades.Count;
 
+            switch(statistics.Average)
+            {
+                case var average when average >= 100:
+                    statistics.AverageLetter = 'A';
+                    break;
+                case var average when average >= 80:
+                    statistics.AverageLetter = 'B';
+                    break;
+                case var average when average >= 60:
+                    statistics.AverageLetter = 'C';
+                    break;
+                case var average when average >= 40:
+                    statistics.AverageLetter = 'D';
+                    break;
+                default:
+                    statistics.AverageLetter = 'E';
+                        break;
+            }
+            
             return statistics;
+
         }
 
 
