@@ -120,7 +120,7 @@ namespace ChallangeApp
 
             statistics.Average = statistics.Average / this.grades.Count;
 
-            switch(statistics.Average)
+            switch (statistics.Average)
             {
                 case var average when average >= 80:
                     statistics.AverageLetter = 'A';
@@ -133,12 +133,12 @@ namespace ChallangeApp
                     break;
                 case var average when average >= 20:
                     statistics.AverageLetter = 'D';
-                    break;             
+                    break;
                 default:
                     statistics.AverageLetter = 'E';
-                        break;
+                    break;
             }
-            
+
             return statistics;
 
         }
