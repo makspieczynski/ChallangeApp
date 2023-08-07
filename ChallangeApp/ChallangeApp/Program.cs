@@ -6,6 +6,20 @@ Console.WriteLine();
 
 var employee = new Employee();
 
+try
+{
+    Employee emp = null;
+    //var name = emp.Surname;
+}
+catch(Exception exception)
+{
+    Console.WriteLine("Takiej sytuacji nie powinno być");
+}
+finally
+{
+    Console.WriteLine("FInally here");
+}
+
 while (true)
 {
     Console.WriteLine("Podaj kolejną ocenę pracownika");

@@ -19,19 +19,14 @@ namespace ChallangeApp.tests
             employee2.AddGrade(10);
             employee2.AddGrade(40);
 
-
-
             //act
             var statistics = employee.GetStatistics();
             var statistics2 = employee2.GetStatistics();
 
-
-
-
             //assert
             Assert.AreEqual(80, statistics.Max);
             Assert.AreEqual(10, statistics.Min);
-            Assert.AreEqual(37,5, statistics.Average);
+            Assert.AreEqual(37, 5, statistics.Average);
             Assert.AreEqual('D', statistics.AverageLetter);
 
             Assert.AreEqual(40, statistics2.Max);
@@ -40,7 +35,7 @@ namespace ChallangeApp.tests
             Assert.AreEqual('E', statistics2.AverageLetter);
 
         }
-        
-       
+
+
     }
 }

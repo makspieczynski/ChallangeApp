@@ -35,7 +35,7 @@ namespace ChallangeApp
             {
                 Console.WriteLine("invalid grade value");
             }
-            
+
         }
 
 
@@ -96,7 +96,7 @@ namespace ChallangeApp
             }
 
         }
-       
+
 
         public Statistics GetStatistics()
         {
