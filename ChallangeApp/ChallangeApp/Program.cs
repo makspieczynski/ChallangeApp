@@ -6,19 +6,19 @@ Console.WriteLine();
 
 var employee = new Employee();
 
-try
-{
-    Employee emp = null;
-    //var name = emp.Surname;
-}
-catch(Exception exception)
-{
-    Console.WriteLine("Takiej sytuacji nie powinno być");
-}
-finally
-{
-    Console.WriteLine("FInally here");
-}
+//try
+//{
+//    Employee emp = null;
+//    var name = emp.Surname;
+//}
+//catch(Exception exception)
+//{
+//    Console.WriteLine("takiej sytuacji nie powinno być");
+//}
+//finally
+//{
+//    Console.WriteLine("finally here");
+//}
 
 while (true)
 {
@@ -29,7 +29,14 @@ while (true)
 
         break;
     }
-    employee.AddGrade(input);
+    try
+    {
+        employee.AddGrade(input);
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine($"Exception caught: {e.Message}");
+    }
 }
 
 var statistics = employee.GetStatistics();

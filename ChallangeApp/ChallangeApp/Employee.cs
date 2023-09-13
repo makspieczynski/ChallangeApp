@@ -5,12 +5,15 @@ namespace ChallangeApp
 {
     public class Employee
     {
+        private const char sex = 'M';
+
         private List<float> grades = new List<float>();
 
         public Employee(string name, string surname)
         {
             this.Name = name;
             this.Surname = surname;
+            
         }
 
         public Employee()
@@ -33,9 +36,8 @@ namespace ChallangeApp
             }
             else
             {
-                Console.WriteLine("invalid grade value");
+                throw new Exception("invalid grade value");
             }
-
         }
 
 
@@ -60,7 +62,7 @@ namespace ChallangeApp
             }
             else
             {
-                Console.WriteLine("string is not float");
+                throw new Exception("string is not float");
             }
 
         }
@@ -91,8 +93,7 @@ namespace ChallangeApp
                     this.grades.Add(20);
                     break;
                 default:
-                    Console.WriteLine("Wrong Letter");
-                    break;
+                    throw new Exception("Wrong Letter");
             }
 
         }
