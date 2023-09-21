@@ -3,28 +3,32 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace ChallangeApp
 {
-    public class Employee
+    public class Employee : Person
     {
-        private const char sex = 'M';
-
         private List<float> grades = new List<float>();
 
-        public Employee(string name, string surname)
+        public Employee(string name, string surname, char gender)
+          : base(name, surname, gender)
         {
-            this.Name = name;
-            this.Surname = surname;
-            
-        }
 
+        }
         public Employee()
+          : base("no name")
         {
+
+        }
+        public Employee(string name)
+           : base(name, "no surname")
+        {
+
+        }
+        public Employee(string name, string surname)
+            : base(name, surname)
+        {
+
         }
 
-        public string Name { get; private set; }
         public string Surname { get; private set; }
-
-
-
 
         public void AddGrade(float grade)
         {
