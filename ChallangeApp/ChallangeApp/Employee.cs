@@ -1,33 +1,16 @@
-﻿using System.Diagnostics;
-using System.Reflection.Metadata.Ecma335;
-
-namespace ChallangeApp
+﻿namespace ChallangeApp
 {
-    public class Employee : Person
+    public class Employee : IEmployee
     {
         private List<float> grades = new List<float>();
 
-        public Employee(string name, string surname, char gender)
-          : base(name, surname, gender)
-        {
-
-        }
-        public Employee()
-          : base("no name")
-        {
-
-        }
-        public Employee(string name)
-           : base(name, "no surname")
-        {
-
-        }
         public Employee(string name, string surname)
-            : base(name, surname)
         {
-
+            this.Name = name;
+            this.Surname = surname;
         }
 
+        public string Name { get; private set; }
         public string Surname { get; private set; }
 
         public void AddGrade(float grade)
@@ -55,20 +38,6 @@ namespace ChallangeApp
         {
             float gradeAsFloat = (float)grade;
             this.AddGrade(gradeAsFloat);
-        }
-
-        public void AddGrade(string grade)
-
-        {
-            if (float.TryParse(grade, out float result))
-            {
-                this.AddGrade(result);
-            }
-            else
-            {
-                throw new Exception("string is not float");
-            }
-
         }
 
         public void AddGrade(char grade)
@@ -101,7 +70,19 @@ namespace ChallangeApp
             }
 
         }
+        public void AddGrade(string grade)
 
+        {
+            if (float.TryParse(grade, out float result))
+            {
+                this.AddGrade(result);
+            }
+            else
+            {
+                throw new Exception("string is not float");
+            }
+
+        }
 
         public Statistics GetStatistics()
         {
