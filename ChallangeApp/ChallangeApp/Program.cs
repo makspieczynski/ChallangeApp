@@ -5,6 +5,7 @@ Console.WriteLine("===========================================");
 Console.WriteLine();
 
 var employee = new Employee("maks", "piecz");
+employee.AddGrade(0.5f);
 
 //try
 //{
