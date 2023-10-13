@@ -4,9 +4,13 @@ Console.WriteLine("Witamy w programie XYZ do oceny pracowników");
 Console.WriteLine("===========================================");
 Console.WriteLine();
 
-var employee = new Employee("maks", "piecz");
-employee.AddGrade(0.5f);
+var employee = new EmployeeInMemory("maks", "piecz");
+employee.GradeAdded += EmployeeGradeAdded;
 
+void EmployeeGradeAdded(object sender, EventArgs args)
+{
+    Console.WriteLine("dodano nową ocenę");
+}
 //try
 //{
 //    Employee emp = null;
