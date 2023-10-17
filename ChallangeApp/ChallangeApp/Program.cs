@@ -4,26 +4,13 @@ Console.WriteLine("Witamy w programie XYZ do oceny pracowników");
 Console.WriteLine("===========================================");
 Console.WriteLine();
 
-var employee = new EmployeeInMemory("maks", "piecz");
+var employee = new EmployeeInFile("maks", "piecz");
 employee.GradeAdded += EmployeeGradeAdded;
 
 void EmployeeGradeAdded(object sender, EventArgs args)
 {
     Console.WriteLine("dodano nową ocenę");
 }
-//try
-//{
-//    Employee emp = null;
-//    var name = emp.Surname;
-//}
-//catch(Exception exception)
-//{
-//    Console.WriteLine("takiej sytuacji nie powinno być");
-//}
-//finally
-//{
-//    Console.WriteLine("finally here");
-//}
 
 while (true)
 {
@@ -31,7 +18,6 @@ while (true)
     var input = Console.ReadLine();
     if (input == "q")
     {
-
         break;
     }
     try
@@ -44,10 +30,17 @@ while (true)
     }
 }
 
-var statistics = employee.GetStatistics();
-Console.WriteLine($"Average: {statistics.Average}");
+var statistics = ((EmployeeInFile)employee).GetStatistics();
+Console.WriteLine("-----------------------");
+Console.WriteLine();
+Console.WriteLine(employee.Name + " " + employee.Surname);
+Console.WriteLine();
+Console.WriteLine("Statystyki:");
+Console.WriteLine($"Average: {statistics.Average:N2}");
 Console.WriteLine($"Min: {statistics.Min}");
 Console.WriteLine($"Max: {statistics.Max}");
+Console.WriteLine();
+Console.WriteLine($"Ocena:{statistics.AverageLetter}");
 
 
 

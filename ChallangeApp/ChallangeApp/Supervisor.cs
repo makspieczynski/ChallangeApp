@@ -7,6 +7,8 @@
 
         public string Surname => "Kowalski";
 
+        public event EmployeeBase.GradeAddedDelegate GradeAdded;
+
         public void AddGrade(float grade)
         {
 

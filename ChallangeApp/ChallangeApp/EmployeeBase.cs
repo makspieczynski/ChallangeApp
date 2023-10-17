@@ -12,14 +12,8 @@
         }
         public string Name { get; private set; }
         public string Surname { get; private set; }
-
-        public virtual void SayHello()
-        {
-            Console.WriteLine("Hello");
-        }
-
         public abstract void AddGrade(float grade);
-        
+
         public abstract void AddGrade(double grade);
 
         public abstract void AddGrade(int grade);
